@@ -1,0 +1,29 @@
+{
+
+"images": [
+    "assets/guy.png"
+],
+
+"frames": [
+    [1, 1, 158, 316, 0, -15, -3],
+    [161, 1, 168, 303, 0, 0, -8],
+    [1, 319, 152, 307, 0, -26, -2],
+    [155, 319, 141, 306, 0, -42, -1],
+    [298, 319, 139, 311, 0, -33, -3],
+    [1, 632, 135, 311, 0, -29, -8],
+    [138, 632, 146, 314, 0, -32, -2],
+    [286, 632, 161, 319, 0, -22, -1]
+],
+
+"animations": {
+    "start":[1,4],
+    "glide":[5],
+    "end":[6,8]
+},
+
+"texturepacker": [
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:64e5c85c01105c364c4481528de7620b:c753a96492a5e00edc86f5cacd23aabd:491c6d724e3e7c01fcf646f2b9c04e35$",
+        "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
+]
+
+}

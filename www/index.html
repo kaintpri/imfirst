@@ -1,21 +1,22 @@
+
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Mobile App</title>
+<title>SpriteSheet Example</title>
 
 <!-- Welcome to ZIM at http://zimjs.com - Code Interactive Media Pizzazz! 	        -->
 <!-- ZIM runs on the HTML Canvas powered by JavaScript and CreateJS http://createjs.com -->
 <!-- Founded by Inventor Dan Zen - http://danzen.com - Canadian New Media Award Winner 	-->
 <!-- ZIM is free to use. You can donate to help improve ZIM at http://zimjs.com/donate 	-->
 
-<script src="libraries/createjs_1.1_min.js"></script>
+<script src="https://d309knd7es5f10.cloudfront.net/createjs.min.js"></script>
 <script>
 	var zon = true; // set to false to turn off console messages from zim
 	var zns = false; // set to true to require zim namespace - eg. new zim.Frame()
 </script>
-<script src="libraries/zim_6.9.0.js"></script>
-<!-- use zimjs.com/distill for minified individual functions! -->
+<script src="https://d309knd7es5f10.cloudfront.net/zim_6.6.1.js"></script>
+<!-- use zimjs.com/code/distill for minified individual functions! -->
 
 <script>
 
@@ -41,29 +42,141 @@ frame.on("ready", function() {
     frame.outerColor = "#444";
     frame.color = "#ddd";
 
-    // see http://zimjs.com/learn.html for video and code tutorials
-    // see http://zimjs.com/docs.html for documentation
-    // see http://zimjs.com/bits.html for 64 Interactive Media techniques
+    // see http://zimjs.com/code/learn.html for video and code tutorials
+    // see http://zimjs.com/code/docs.html for documentation
+    // see http://zimjs.com/code/bits.html for 64 Interactive Media techniques
 
     // put your code here (you can delete this sample code)
 
-    // with chaining - can also assign to a variable for later access
-    new Circle(100, "orange")
-        .center(stage)
-        .drag();
+  frame.loadAssets(["spritesheet.png", "spritesheet.json", "shoot.mp3", "background2.png", "oceanbed.png", "coral.png", "turtle.png", "submarine.png"], "spritesheets/");
 
-    // without chaining
-    // var circle = new Circle(100, "orange");
-    // circle.center(stage);
-    // circle.drag();
 
-    stage.update(); // this is needed to show any changes
+	frame.on("complete", function() {
+		// frame.asset("spritesheet.png").addTo(stage);
+		// var shoot = frame.asset("shoot.mp3");
+		// shoot.play();
 
+		 var sub = frame.asset("submarine.png")
+		 .center(stage);
+
+		// var spriteData = frame.asset("spritesheet.json");
+
+		// var sprite = new Sprite({json:spriteData})
+		// 	.centerReg(stage)
+		// 	.mov(0, 50)
+		// 	// .outline()
+		// 	// .run({
+		// 	// 	time:1000,
+		// 	// 	label:"shoot",
+		// 	// 	loop:true,
+		// 	// 	loopCall:function(){
+		// 	// 		shoot.play();
+		// 	// 	}
+		// 	// });
+    //
+		// var dynamo = new Dynamo({
+		// 	sprite:sprite,
+		// 	speed:30,
+		// 	label:"walk",
+		// 	reversable:false
+		// });
+
+		Ticker.always();
+
+		var turtle = frame.asset("turtle.png");
+		turtle.addTo(stage);
+
+		var label = new zim.Label("OCEAN", 30, "Courier", "white");
+
+		turtle.on("click", function() {
+			var pane = new Pane(300, 200, label, "#CCC");
+			pane.show(); // pressing anywhere will close pane (see parameters for options)
+			// paneDrag.show(); //shows pane
+
+		});
+
+		// var closeBut = new zim.Button(41,41,"X","black","#444","white","2",5);
+		// var label = new zim.Label("OCEAN", 30, "Courier", "white");
+		// // container, width, height, label, color, drag, resets, modal, etc. see docs
+		// var paneDrag = new zim.Pane(stage, 400, 300, label, "black", true, false, false);
+		// paneDrag.addChild(closeBut).outline();
+		// paneDrag.x = 400; paneDrag.y = 200;
+		// closeBut.x = 136; closeBut.y = -130;
+		// closeBut.alpha = .7;
+		// // must make custom listener for close button to hide pane
+		// closeBut.on("click",function() {
+		// 	paneDrag.hide();
+		// });
+
+		// turtle.on("click", function() {
+		// 	var showButton = new zim.Button(140,60,"POP")
+		// 		.alp(0)
+		// 		.center(sce);
+		// 	});
+
+
+		// var submarine = frame.asset("submarine.png")
+		// .centerReg(stage)
+		// .mov(0, 50);
+
+		var scenery = new Container().addTo(stage, 0);
+
+		// var background = frame.asset("background.png")
+		// 	.addTo(scenery);
+		// var scroller1 = new Scroller(background, 1);
+        //
+		// var ground = frame.asset("ground.png")
+		// 	.addTo(scenery).mov(0, -150);
+		// var scroller2 = new Scroller(ground, 3);
+        //
+		// var midground = frame.asset("midground.png")
+		// 	.addTo(scenery);
+		// var scroller3 = new Scroller(midground, 2);
+        //
+		// var accelerator = new Accelerator([
+		// 	dynamo,
+		// 	scroller1,
+		// 	scroller2,
+		// 	scroller3
+		// ]);
+
+		var fish = new Container(5000, stageH);
+		var turtle = frame.asset("turtle.png");
+		turtle.addTo(fish);
+
+		// frame.asset("background2.png").addTo(background), 1),
+
+		var accelerator = new Accelerator([
+			new Scroller(frame.asset("background2.png").addTo(scenery), 1),
+			new Scroller(fish.addTo(scenery), 1.5),
+			new Scroller(frame.asset("oceanbed.png").addTo(scenery).mov(0,150), 3),
+			new Scroller(frame.asset("coral.png").mov(0,200).addTo(scenery), 2),
+		]);
+
+
+		// Ticker.always();
+
+		// var pd = new ProportionDamp(0, stageW, -60, 60); // for dynamo
+		var pd = new ProportionDamp(0, stageW, -200, 200); // for accelerator
+		Ticker.add(function() {
+			// zog(pd.convert(stage.mouseX))
+			// dynamo.speed = pd.convert(stage.mouseX);
+			accelerator.percentSpeed = pd.convert(stage.mouseX);
+			// if (dynamo.speed > 0) {
+			// 	sprite.scaleX = 1;
+			// } else {
+			// 	sprite.scaleX = -1;
+			// }
+        	// zog(Math.round(stage.mouseX));
+		})
+
+		stage.update(); // this is needed to show any changes
+	}); // end of assets loaded
 }); // end of ready
 
 </script>
 
-<meta name="viewport" content="width=device-width, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 </head>
 

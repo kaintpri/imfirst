@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>ZIM Jellies - Tag</title>
+
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="zim_distilled.js"> // ZIMjs - http://zimjs.com - DISTILLED (38 KB) for Jellies</script>
+
+<script>
+var frame = new Frame("myJelly", 150, 150);
+frame.on("ready", function() {
+	var stage = frame.stage;
+	frame.loadAssets(["jellies_.png", "jelly.json"]);
+	frame.on("complete", function() {
+		new Sprite({json:frame.asset("jelly.json")})
+			.center(stage)
+			.run({time:2000, label:"green", loop:true});
+	});
+});
+</script>
+
+<style>
+	body {font-family: verdana; size:30px; color:#333; padding:30px;}
+</style>
+</head>
+
+<body>
+	<h1>Jelly</h1>
+	<p>Here is some HTML with a Sprite</p>
+	<div id="myJelly"></div>
+	<p>and some more HTML after.</p>
+	<p>ZIM has been distilled to 38K.</p>
+</body>
+</html>
