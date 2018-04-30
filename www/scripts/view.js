@@ -212,14 +212,14 @@ var app = function(app) {
         //~~~~~~~~~~~~~~SEAL~~~~~~~~~~~~~~
 
         var seal = frame.asset("seal.png");
-        seal.addTo(content).mov(2500,300);
+        seal.addTo(content).mov(2500,370);
 
         var ball = frame.asset("ball.png");
         ball.y=0;
 
         ball
         .addTo(content)
-        .mov(2675,140)
+        .mov(2675,210)
         .wiggle({
             property:"y",
             baseAmount:ball.y,
