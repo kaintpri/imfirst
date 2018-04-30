@@ -56,7 +56,8 @@ var app = function(app) {
 
         //~~~~~~~~~~~~~~SUBMARINE~~~~~~~~~~~~~
         var sub = frame.asset("submarine.png")
-        		 .center(content);
+        		 .center(content)
+             .mov(0,0);
 
         sub.y = 200;
 
@@ -90,7 +91,7 @@ var app = function(app) {
         var textArea = new TextArea({
             frame:frame,
             width: 300,
-            height:150,
+            height:250,
             size:15,
             color:frame.white,
             padding:20,
@@ -104,7 +105,7 @@ var app = function(app) {
 		    turtle.on("click", function() {
 			  var pane = new Pane({
             width:300,
-            height:150,
+            height:250,
             label:textArea,
             color:'#5ac2d5',
         });
@@ -130,7 +131,7 @@ var app = function(app) {
         var textAreaWhale = new TextArea({
             frame:frame,
             width: 300,
-            height:150,
+            height:250,
             size:15,
             color:frame.white,
             padding:20,
@@ -145,7 +146,7 @@ var app = function(app) {
       	whale.on("click", function() {
       	var pane = new Pane({
             width:300,
-            height:150,
+            height:250,
             label:textAreaWhale,
             color:'#5ac2d5',
         });
@@ -185,7 +186,7 @@ var app = function(app) {
         var textAreaJelly = new TextArea({
             frame:frame,
             width: 300,
-            height:150,
+            height:250,
             size:15,
             color:frame.white,
             padding:20,
@@ -200,7 +201,7 @@ var app = function(app) {
       	jellyfish.on("click", function() {
       	var pane = new Pane({
             width:300,
-            height:150,
+            height:250,
             label:textAreaJelly,
             color:'#5ac2d5',
         });
@@ -232,7 +233,7 @@ var app = function(app) {
         var textAreaSeal = new TextArea({
             frame:frame,
             width: 300,
-            height:130,
+            height:230,
             size:15,
             color:frame.white,
             padding:20,
@@ -247,7 +248,7 @@ var app = function(app) {
       	seal.on("click", function() {
       	var pane = new Pane({
             width:300,
-            height:130,
+            height:230,
             label:textAreaSeal,
             color:'#5ac2d5',
         });
@@ -272,7 +273,7 @@ var app = function(app) {
         var textAreaSchool = new TextArea({
             frame:frame,
             width: 300,
-            height:190,
+            height:290,
             size:15,
             color:frame.white,
             padding:20,
@@ -287,7 +288,7 @@ var app = function(app) {
       	fishcircle.on("click", function() {
       	var pane = new Pane({
             width:300,
-            height:190,
+            height:290,
             label:textAreaSchool,
             color:'#5ac2d5',
         });
@@ -325,7 +326,7 @@ var app = function(app) {
         var textAreaSeahorse = new TextArea({
             frame:frame,
             width: 300,
-            height:170,
+            height:270,
             size:15,
             color:frame.white,
             padding:20,
@@ -340,7 +341,7 @@ var app = function(app) {
       	seahorse.on("click", function() {
       	var pane = new Pane({
             width:300,
-            height:170,
+            height:270,
             label:textAreaSeahorse,
             color:'#5ac2d5',
         });
