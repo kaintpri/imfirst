@@ -35,7 +35,7 @@ var app = function(app) {
             // {object:header, marginTop:5, backgroundColor:frame.yellow},
             {object:content, marginTop:10, backgroundColor:frame.dark},
             {object:footer, marginTop:1, maxWidth:60, minHeight:5}
-        ], 5, frame.dark, null, new Shape(), stage);
+        ], 5, frame.dark, null, null, stage);
         layoutManager.add(layout1);
 
 
@@ -60,6 +60,7 @@ var app = function(app) {
              .mov(0,0);
 
         sub.y = 200;
+        sub.x = 0;
 
         sub.wiggle({
             property:"y",
@@ -91,7 +92,7 @@ var app = function(app) {
         var textArea = new TextArea({
             frame:frame,
             width: 300,
-            height:250,
+            height:165,
             size:15,
             color:frame.white,
             padding:20,
@@ -105,7 +106,7 @@ var app = function(app) {
 		    turtle.on("click", function() {
 			  var pane = new Pane({
             width:300,
-            height:250,
+            height:165,
             label:textArea,
             color:'#5ac2d5',
         });
@@ -131,7 +132,7 @@ var app = function(app) {
         var textAreaWhale = new TextArea({
             frame:frame,
             width: 300,
-            height:250,
+            height:165,
             size:15,
             color:frame.white,
             padding:20,
@@ -146,7 +147,7 @@ var app = function(app) {
       	whale.on("click", function() {
       	var pane = new Pane({
             width:300,
-            height:250,
+            height:165,
             label:textAreaWhale,
             color:'#5ac2d5',
         });
@@ -186,7 +187,7 @@ var app = function(app) {
         var textAreaJelly = new TextArea({
             frame:frame,
             width: 300,
-            height:250,
+            height:165,
             size:15,
             color:frame.white,
             padding:20,
@@ -201,7 +202,7 @@ var app = function(app) {
       	jellyfish.on("click", function() {
       	var pane = new Pane({
             width:300,
-            height:250,
+            height:165,
             label:textAreaJelly,
             color:'#5ac2d5',
         });
@@ -211,14 +212,14 @@ var app = function(app) {
         //~~~~~~~~~~~~~~SEAL~~~~~~~~~~~~~~
 
         var seal = frame.asset("seal.png");
-        seal.addTo(content).mov(2500,400);
+        seal.addTo(content).mov(2500,300);
 
         var ball = frame.asset("ball.png");
         ball.y=0;
 
         ball
         .addTo(content)
-        .mov(2675,240)
+        .mov(2675,140)
         .wiggle({
             property:"y",
             baseAmount:ball.y,
@@ -233,7 +234,7 @@ var app = function(app) {
         var textAreaSeal = new TextArea({
             frame:frame,
             width: 300,
-            height:230,
+            height:150,
             size:15,
             color:frame.white,
             padding:20,
@@ -248,7 +249,7 @@ var app = function(app) {
       	seal.on("click", function() {
       	var pane = new Pane({
             width:300,
-            height:230,
+            height:150,
             label:textAreaSeal,
             color:'#5ac2d5',
         });
@@ -273,7 +274,7 @@ var app = function(app) {
         var textAreaSchool = new TextArea({
             frame:frame,
             width: 300,
-            height:290,
+            height:190,
             size:15,
             color:frame.white,
             padding:20,
@@ -288,7 +289,7 @@ var app = function(app) {
       	fishcircle.on("click", function() {
       	var pane = new Pane({
             width:300,
-            height:290,
+            height:190,
             label:textAreaSchool,
             color:'#5ac2d5',
         });
@@ -326,7 +327,7 @@ var app = function(app) {
         var textAreaSeahorse = new TextArea({
             frame:frame,
             width: 300,
-            height:270,
+            height:180,
             size:15,
             color:frame.white,
             padding:20,
@@ -341,7 +342,7 @@ var app = function(app) {
       	seahorse.on("click", function() {
       	var pane = new Pane({
             width:300,
-            height:270,
+            height:180,
             label:textAreaSeahorse,
             color:'#5ac2d5',
         });
@@ -363,7 +364,7 @@ var app = function(app) {
           });
 
 
-        //~~~~~~~~~~~~~~CONTAINER AND SCROLLER~~~~~~~~~~~~~~
+        //~~~~~~~~~~~~~~SCROLLER~~~~~~~~~~~~~~
         var scenery = new Container().addTo(content, 0);
 
         var fish = new Container(4000, stageH);
