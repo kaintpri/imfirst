@@ -274,7 +274,7 @@ var app = function(app) {
         var textAreaSchool = new TextArea({
             frame:frame,
             width: 300,
-            height:190,
+            height:200,
             size:15,
             color:frame.white,
             padding:20,
@@ -289,7 +289,7 @@ var app = function(app) {
       	fishcircle.on("click", function() {
       	var pane = new Pane({
             width:300,
-            height:190,
+            height:200,
             label:textAreaSchool,
             color:'#5ac2d5',
         });
