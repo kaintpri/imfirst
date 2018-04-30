@@ -212,14 +212,14 @@ var app = function(app) {
         //~~~~~~~~~~~~~~SEAL~~~~~~~~~~~~~~
 
         var seal = frame.asset("seal.png");
-        seal.addTo(content).mov(2500,370);
+        seal.addTo(content).mov(2500,385);
 
         var ball = frame.asset("ball.png");
         ball.y=0;
 
         ball
         .addTo(content)
-        .mov(2675,210)
+        .mov(2675,225)
         .wiggle({
             property:"y",
             baseAmount:ball.y,
@@ -234,7 +234,7 @@ var app = function(app) {
         var textAreaSeal = new TextArea({
             frame:frame,
             width: 300,
-            height:150,
+            height:160,
             size:15,
             color:frame.white,
             padding:20,
@@ -381,11 +381,11 @@ var app = function(app) {
         heart.addTo(fish);
 
         var accelerator = new Accelerator([
-            new Scroller(frame.asset("background2.png").scaleTo(stage,null,100).addTo(scenery), 1, null, null, null, stage),
-            new Scroller(fish.addTo(scenery), 1.5),
-            new Scroller(frame.asset("oceanbed.png").scaleTo(stage,null,100).addTo(scenery).mov(0,100), 3, null, null, null, stage),
-            new Scroller(frame.asset("coral.png").scaleTo(stage,null,100).addTo(scenery).mov(0,250), 2, null, null, null, stage),
-            new Scroller(fish, 2, null, null, null, stage),
+            new Scroller(frame.asset("background2.png").scaleTo(stage,null,100).addTo(scenery), 3, null, null, null, stage),
+            new Scroller(fish.addTo(scenery), 3.5),
+            new Scroller(frame.asset("oceanbed.png").scaleTo(stage,null,100).addTo(scenery).mov(0,100), 5, null, null, null, stage),
+            new Scroller(frame.asset("coral.png").scaleTo(stage,null,100).addTo(scenery).mov(0,250), 4, null, null, null, stage),
+            new Scroller(fish, 4, null, null, null, stage),
         ]);
 
         var pd = new ProportionDamp(0, stageW, -200, 200); // for accelerator
